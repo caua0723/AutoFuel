@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="banner/autofuel-banner.png" alt="Banner do AutoFuel" width="100%">
+</p>
+
 # AutoFuel ⛽
 
 Sistema desktop acadêmico para gerenciamento de operações de um posto de combustível, desenvolvido em Java Swing com PostgreSQL.
