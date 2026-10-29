@@ -1,0 +1,6 @@
+# Copie este arquivo para config.properties e informe a senha local do PostgreSQL.
+host=localhost
+port=5432
+database=autofuel
+user=postgres
+password=COLOQUE_SUA_SENHA_LOCAL_AQUI

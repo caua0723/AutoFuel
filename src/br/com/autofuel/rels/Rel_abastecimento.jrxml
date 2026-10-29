@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd61be25-a826-48f0-9ec7-2917222c8056">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    a.dat_abast,
+    a.placa_abast,
+    b.tipo_comb_bom,
+    a.litros_abast,
+    a.val_litro_abast,
+    a.val_total_abast,
+    f.nome_fun
+FROM abastecimento a, bomba b, funcionario f
+WHERE a.id_bom = b.id_bom
+AND a.id_fun = f.id_fun
+ORDER BY a.dat_abast]]>
+	</queryString>
+	<field name="dat_abast" class="java.sql.Date"/>
+	<field name="placa_abast" class="java.lang.String"/>
+	<field name="tipo_comb_bom" class="java.lang.String"/>
+	<field name="litros_abast" class="java.math.BigDecimal"/>
+	<field name="val_litro_abast" class="java.math.BigDecimal"/>
+	<field name="val_total_abast" class="java.math.BigDecimal"/>
+	<field name="nome_fun" class="java.lang.String"/>
+	<group name="dat_abast">
+		<groupExpression><![CDATA[$F{dat_abast}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="26" width="335" height="36" uuid="82b28093-51c5-406e-96f8-89ea9d71fe8f"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Relatório de Abastecimentos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="22" width="36" height="20" uuid="3fb08f4e-1388-445d-861c-f224acd095d4"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="22" width="34" height="20" uuid="e20f6064-6316-4aae-865c-6c7c2490ba9b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Litros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="22" width="75" height="20" uuid="1a4368c6-e134-413f-8713-b85a42f03b90"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Combustível]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="22" width="72" height="20" uuid="0c184494-6ef5-4065-9715-36832a8babd6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Funcionário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="22" width="62" height="20" uuid="2ab3b72f-f9a0-4b92-9dce-682858496a01"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor/Litro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="22" width="37" height="20" uuid="d4f27820-90b3-42de-8fab-2954d99518ee"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="212" y="18" width="75" height="20" uuid="e9615ef6-b146-4bb1-9f12-000ee26fe445"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{litros_abast}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="18" width="76" height="20" uuid="cc80e62c-c685-4218-a0a2-5ebbed8b821c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{placa_abast}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="18" width="87" height="20" uuid="72ac9406-4327-405b-a782-31ff723dbb4c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tipo_comb_bom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="18" width="73" height="20" uuid="7c80e33c-6841-4a2c-8ec6-1d376007f97f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{nome_fun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="18" width="89" height="20" uuid="17e11c16-9cad-45f2-8534-065243b95eb7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{val_litro_abast}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="18" width="77" height="20" uuid="9f788fc3-7e91-4ff3-8491-b0ab00b527e2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{val_total_abast}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="50" width="555" height="1" uuid="bc80ac15-b3c6-4b41-999d-b365b86398aa"/>
+			</line>
+			<line>
+				<reportElement x="1" y="4" width="554" height="1" uuid="0c82ed11-e98b-48b5-a051-d1437dce1cfa"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

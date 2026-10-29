@@ -1,0 +1,10 @@
+# Configuracao local: nunca publicar credenciais
+config.properties
+.env
+*.local.properties
+
+# Arquivos gerados pelo NetBeans/Ant
+/build/
+/dist/
+/nbproject/private/
+*.log
